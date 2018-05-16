@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Calcula el ISAN</h2>
+
+<p id="isan"></p>
+
+<script>
+
+var text = '{ "isan":"function() {precio=100000; if(precio<75098.87){tasa=0.02; isan=precio*tasa;} else if(precio<90118.61){ tasa=.05; fija=1501.96; liminf=75098.88; isan=(precio-liminf)*tasa + fija;} else if(precio<105138.43){tasa=.10; fija = 2252.97; liminf=98118.62; isan=(precio-liminf)*tasa + fija;} else if(precio<135117.89){tasa=.15; fija=3754.94; liminf=105138.44; isan=(precio-liminf)*tasa + fija;} else if(precio>135117.89){tasa=0.17; fija=8260.86; liminf=135177.90; isan=(precio-liminf)*tasa + fija;} else {isan=precio} return isan;}"}';
+
+var obj = JSON.parse(text);
+obj.isan = eval("(" + obj.isan + ")");
+
+document.getElementById("isan").innerHTML = obj.isan();  
+
+</script>
+
+</body>
+</html>
