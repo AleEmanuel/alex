@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>valoracion de embarques</h2>
+
+
+<p id="demo"></p>
+
+<script>
+// dias de entrega de los embarques
+var entrega = 2;
+//  dias de espera para la entrega (horizonte de planeaciom)   
+var ho=3;
+
+// comparacion de los datos
+    if (ho>entrega){
+        // si los dias de entrega son menores a los dias de planeacion entonces el embarque es rentable
+    document.getElementById("demo").innerHTML = "embarque rentable";
+}
+   else {
+       // en caso contrario no es rentable ya que el embarque llegara en una situación critica
+    document.getElementById("demo").innerHTML = "embarque no rentable";
+    }
+
+
+    </script>
+
+</body>
+</html>
